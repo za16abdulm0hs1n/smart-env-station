@@ -2,13 +2,13 @@
 
 An ESP32-based project for comprehensive environmental monitoring featuring AHT20 temperature and humidity, BMP280 pressure, LDR light sensor, and sound RMS measurement. The system includes an OLED user interface with menu navigation using a button and potentiometer, LED and buzzer feedback, and cloud integration with ThingSpeak via HTTP or MQTT. Arduino Uno is also supported in a local-only mode without cloud connectivity.
 
-![Smart Environment Station](../images/station.png)
+![Smart Environment Station](images/station.png)
 
 ## ThingSpeak Dashboard
 
 Below is an example screenshot of the live ThingSpeak data:
 
-![ThingSpeak Dashboard](../images/cloud.png)
+![ThingSpeak Dashboard](images/cloud.png)
 
 ## Features
 
