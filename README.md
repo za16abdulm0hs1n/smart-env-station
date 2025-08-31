@@ -2,13 +2,13 @@
 
 An ESP32-based project for comprehensive environmental monitoring featuring AHT20 temperature and humidity, BMP280 pressure, LDR light sensor, and sound RMS measurement. The system includes an OLED user interface with menu navigation using a button and potentiometer, LED and buzzer feedback, and cloud integration with ThingSpeak via HTTP or MQTT. Arduino Uno is also supported in a local-only mode without cloud connectivity.
 
-![Smart Environment Station](images/station.png)
+![Smart Environment Station](../images/station.png)
 
 ## ThingSpeak Dashboard
 
 Below is an example screenshot of the live ThingSpeak data:
 
-![ThingSpeak Dashboard](images/cloud.png)
+![ThingSpeak Dashboard](../images/cloud.png)
 
 ## Features
 
@@ -33,16 +33,16 @@ platformio.ini # PlatformIO build configuration
 
 ## Pin Connection Table
 
-| Component      | Board Pin | Description                    |
-|----------------|-----------|--------------------------------|
-| Button         | D4        | Menu navigation button         |
-| LED            | D6        | Status LED                     |
-| Buzzer         | D5        | Audio feedback buzzer          |
-| Potentiometer  | A0        | Menu navigation potentiometer  |
-| LDR            | A3        | Light sensor analog input      |
-| Sound          | A2        | Sound RMS analog input         |
-| AHT20/BMP280/OLED | SDA (21) | I2C data line for sensors and display |
-| AHT20/BMP280/OLED | SCL (22) | I2C clock line for sensors and display|
+| Component  | Board Pin | Description                      |
+|------------|------------|--------------------------------|
+| Button     | D4         | Menu navigation button          |
+| LED        | D6         | Status LED                     |
+| Buzzer     | D5         | Audio feedback buzzer           |
+| Potentiometer | A0       | Menu navigation potentiometer   |
+| LDR        | A3         | Light sensor analog input       |
+| Sound      | A2         | Sound RMS analog input          |
+| AHT20/BMP280/OLED | I2C SDA (GPIO 21) | I2C data line for sensors and display |
+| AHT20/BMP280/OLED | I2C SCL (GPIO 22) | I2C clock line for sensors and display|
 
 ## Configuration
 
