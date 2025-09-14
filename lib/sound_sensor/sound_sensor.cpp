@@ -1,6 +1,6 @@
 #include "sound_sensor.h"
 
-#if defined(ESP32) || defined(ARDUINO_ARCH_ESP32)
+#if defined(ESP32)
   static constexpr int SND_ADC_MAX = 4095; // ESP32 12-bit ADC
 #else
   static constexpr int SND_ADC_MAX = 1023; // AVR/UNO 10-bit ADC
@@ -52,4 +52,12 @@ bool SoundSensor::sample() {
   }
 
   return false; // Still accumulating, no clap event
+}
+
+int SoundSensor::lastRmsPercent() const {
+  if (_rmsMax <= _rmsMin) return 0;
+  float pct = 100.0f * (_lastRms - _rmsMin) / (_rmsMax - _rmsMin);
+  if (pct < 0.0f) pct = 0.0f;
+  if (pct > 100.0f) pct = 100.0f;
+  return static_cast<int>(pct);
 }

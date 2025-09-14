@@ -21,10 +21,25 @@ constexpr uint8_t PIN_BUZ = 27; ///< Buzzer (Base D5 → ESP32 P27)
 
 constexpr uint8_t PIN_POT = 34; ///< Potentiometer (Base A0 → ESP32 P34, ADC-only)
 constexpr uint8_t PIN_SND = 35; ///< Sound Sensor (Base A1 → ESP32 P35, ADC-only)
-constexpr uint8_t PIN_LDR = 32; ///< Light Sensor (Base A3 → ESP32 P32)
+constexpr uint8_t PIN_LDR = 39; ///< Light Sensor (Base A3 → ESP32 P39, ADC-only)
 
 constexpr int     PIN_SDA = 21; ///< I²C data (SDA)
 constexpr int     PIN_SCL = 22; ///< I²C clock (SCL)
+
+/**
+ * @section Status LED Pin Assignments
+ *
+ * Pin assignments for status LEDs (5x red for sensors, 1x blue for TX, 1x yellow for error, 1x green for power/heartbeat).
+ */
+constexpr uint8_t PIN_LED_SENSOR1 = 13;   ///< Red LED 1 (Sensor 1 status)
+constexpr uint8_t PIN_LED_SENSOR2 = 14;   ///< Red LED 2 (Sensor 2 status)
+constexpr uint8_t PIN_LED_SENSOR3 = 16;  ///< Red LED 3 (Sensor 3 status)
+constexpr uint8_t PIN_LED_SENSOR4 = 17;  ///< Red LED 4 (Sensor 4 status)
+constexpr uint8_t PIN_LED_SENSOR5 = 33;   ///< Red LED 5 (Sensor 5 status)
+constexpr uint8_t PIN_LED_TX      = 18;  ///< Blue LED (TX activity)
+constexpr uint8_t PIN_LED_ERROR   = 19;  ///< Yellow LED (Error indicator)
+constexpr uint8_t PIN_LED_PWR     = 15;  ///< Green LED (Power/Heartbeat)
+
 
 #elif defined(ARDUINO_AVR_UNO) || defined(ARDUINO_ARCH_AVR)
 /**
@@ -45,3 +60,4 @@ constexpr uint8_t PIN_LDR = A3;  ///< Light Sensor (Base A2 → Uno A2)
 #else
 #  error "Unsupported board. Please extend app_pins.h for your target."
 #endif
+

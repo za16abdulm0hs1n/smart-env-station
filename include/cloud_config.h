@@ -94,7 +94,7 @@
  *
  * @note Fill this with YOUR channel number from the channel page URL.
  */
-#define TS_CHANNEL_ID    3055031
+#define TS_CHANNEL_ID    "3055031"
 
 /**
  * @def MQTT_CLIENT_ID
@@ -112,7 +112,7 @@
  * @def MQTT_PASSWORD
  * @brief Password from the downloaded MQTT credentials.
  */
-#define MQTT_PASSWORD    "pS5l+ke8L/adEF2WqoIfO7mm"
+#define MQTT_PASSWORD    "rJKSgRMJwS3cEL2YthbOG8Ia"
 
 
 // ============================================================================
@@ -125,7 +125,7 @@
  *        You can also override this in a .cpp (define before including this header).
  */
 #ifndef USE_MQTT
-  #define USE_MQTT 0
+  #define USE_MQTT 1
 #endif
 
 // (No preprocessor string-index checks; credentials above are taken as-is.)

@@ -65,6 +65,23 @@ public:
   float lastRms() const { return _lastRms; }
 
   /**
+   * @brief Get last RMS value mapped to percentage (0–100%).
+   *
+   * RMS_MIN = 0 → 0%, RMS_MAX = 1000 → 100% (defaults, can be adjusted).
+   *
+   * @return Sound level in percent (0–100).
+   */
+  int lastRmsPercent() const;
+
+  /**
+   * @brief Set calibration range for percentage mapping.
+   *
+   * @param min Minimum RMS value corresponding to 0%.
+   * @param max Maximum RMS value corresponding to 100%.
+   */
+  void setPercentRange(float min, float max) { _rmsMin = min; _rmsMax = max; }
+
+  /**
    * @brief Set alpha for DC removal EMA filter.
    *
    * Range: 0..1, close to 1 = slower drift removal (default = 0.995).
@@ -107,4 +124,7 @@ private:
 
   // Clap detection
   float _clapTh = 200.0f;    ///< Threshold for clap detection
+
+  float _rmsMin = 0.0f;    ///< RMS value corresponding to 0%
+  float _rmsMax = 1000.0f; ///< RMS value corresponding to 100%
 };
