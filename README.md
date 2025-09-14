@@ -1,8 +1,17 @@
 # Smart Environment Station
 
+
 An ESP32-based project for comprehensive environmental monitoring featuring AHT20 temperature and humidity, BMP280 pressure, LDR light sensor, and sound RMS measurement. The system includes an OLED user interface with menu navigation using a button and potentiometer, LED and buzzer feedback, and cloud integration with ThingSpeak via HTTP or MQTT. Arduino Uno is also supported in a local-only mode without cloud connectivity.
 
+**Note:** This project is part of a larger system where another board will receive sensor readings and control actuators (e.g., motors).
+
 ![Smart Environment Station](images/station.png)
+
+## Project Context
+
+This Smart Environment Station acts as the sensing unit in a larger system. In the complete setup, a future board will serve as a receiver/controller, obtaining sensor readings from this unit and triggering actions such as operating motors or other actuators based on the data.
+
+Access to and use of this system is restricted. Permission from the author is required for any use or integration with other hardware or software.
 
 ## ThingSpeak Dashboard
 
@@ -33,16 +42,16 @@ platformio.ini # PlatformIO build configuration
 
 ## Pin Connection Table
 
-| Component  | Board Pin | Description                      |
-|------------|------------|--------------------------------|
-| Button     | D4         | Menu navigation button          |
-| LED        | D6         | Status LED                     |
-| Buzzer     | D5         | Audio feedback buzzer           |
-| Potentiometer | A0       | Menu navigation potentiometer   |
-| LDR        | A3         | Light sensor analog input       |
-| Sound      | A2         | Sound RMS analog input          |
-| AHT20/BMP280/OLED | I2C SDA (GPIO 21) | I2C data line for sensors and display |
-| AHT20/BMP280/OLED | I2C SCL (GPIO 22) | I2C clock line for sensors and display|
+| Component      | Board Pin | Description                    |
+|----------------|-----------|--------------------------------|
+| Button         | D4        | Menu navigation button         |
+| LED            | D6        | Status LED                     |
+| Buzzer         | D5        | Audio feedback buzzer          |
+| Potentiometer  | A0        | Menu navigation potentiometer  |
+| LDR            | A3        | Light sensor analog input      |
+| Sound          | A2        | Sound RMS analog input         |
+| AHT20/BMP280/OLED | SDA (21) | I2C data line for sensors and display |
+| AHT20/BMP280/OLED | SCL (22) | I2C clock line for sensors and display|
 
 ## Configuration
 
@@ -81,5 +90,7 @@ platformio.ini # PlatformIO build configuration
 - Calibrate sensor thresholds as needed for accurate readings and alerts.
 
 ## License
+
+**Note:** Usage of this project or its components is not permitted without explicit permission from the author.
 
 
